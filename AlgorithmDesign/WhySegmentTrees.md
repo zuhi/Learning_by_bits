@@ -30,4 +30,25 @@ Considering there are 'n' elements & 'k' sum range query
 ***When to use Segment Tree***
 
 Whenever the given array is updated, the prefix sum array also needs to be updated, so in efficient prefix sum array approach it takes O(n) time to compute prefix sum array for single update query request.
-Considering the senario where there is a greater number of update query requests, _segment trees_ are used.
+So, for say 'k' range sum and 'q' update queries
+
+When the **prefix sum approach** approach is used,
+
+```text
+Time complexity for range sum query = O(1)
+Time Complexity for update query = O(n)
+For total queries= O(qn) + O(k)
+```
+When the **brute force** approach is used,
+```text
+Time complexity for range sum query = O(n)
+Time Complexity for update query = O(1)
+For total queries= O(k) + O(qn)
+```
+When the **segment tree** approach is used,
+```text
+Time complexity for range sum query = O(logn)
+Time Complexity for update query = O(logn)
+For total queries= O(klogn) + O(qlogn)
+```
+Considering the above senario when there is a greater number of update query requests, _segment trees_ are used.
